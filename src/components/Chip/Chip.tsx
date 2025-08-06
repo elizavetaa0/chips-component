@@ -9,17 +9,15 @@ interface ChipProps {
 }
 
 export const Chip = React.forwardRef<HTMLButtonElement, ChipProps>(
-  ({ label, selected = false, onClick, className = '' }, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={`${styles.chip} ${selected ? styles.selected : ''} ${className}`}
-        onClick={onClick}
-      >
-        {label}
-      </button>
-    );
-  }
+  ({ label, selected = false, onClick, className = '' }, ref) => (
+    <button
+      ref={ref}
+      className={`${styles.chip} ${selected ? styles.selected : ''} ${className}`}
+      onClick={onClick}
+    >
+      {label}
+    </button>
+  )
 );
 
 Chip.displayName = 'Chip';
